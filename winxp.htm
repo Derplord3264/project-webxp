@@ -6,8 +6,6 @@
 <script>
 onload = function()
 {
-    var outputext = document.getElementById("outputext");
-    outputext.innerHTML = "Script has run.";
     new V86({
         wasm_path: "v86.wasm",
         bios: { url: "seabios.bin" },
