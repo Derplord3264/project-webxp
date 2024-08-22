@@ -182,9 +182,19 @@ body {
 /* Parallax Stars */
 .parallax {
     position: absolute;
-    width: 200%;
-    height: 200%;
-    background: url('stars.png') repeat;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: darkpurple;
+    border-radius: 50%;
     animation: moveStars 50s linear infinite;
 }
 
@@ -204,7 +214,7 @@ body {
         </div>
     </header>
     <main>
-        <div class="parallax"></div>
+        <div class="parallax" id="parallax"></div>
     </main>
     <div class="dot"></div>
     <div class="overlay">
@@ -271,6 +281,16 @@ body {
             }
         });
 
+        // Create stars
+        const parallax = document.getElementById('parallax');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.left = Math.random() * 100 + 'vw';
+            parallax.appendChild(star);
+        }
+
         window.addEventListener('scroll', function() {
             const parallax = document.querySelector('.parallax');
             let scrollPosition = window.pageYOffset;
@@ -278,4 +298,4 @@ body {
         });
     </script>
 </body>
-</html>
+</
