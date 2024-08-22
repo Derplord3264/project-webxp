@@ -10,10 +10,11 @@ onload = function()
         vga_bios: { url: "vgabios.bin" },
         hda: {
             url: "winxp.img",
-            size: 2 * 1024 * 1024 * 1024,
+            size: 10 * 1024 * 1024 * 1024,
             async: true
         },
-        memory_size: 512 * 1024 * 1024,
+        memory_size: 4 * 1024 * 1024 * 1024,
+        vga_memory_size: 2 * 1024 * 1024 * 1024,
         screen_container: screen_container,
         autostart: true,
     });
