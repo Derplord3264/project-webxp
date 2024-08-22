@@ -4,6 +4,8 @@
 <script>
 onload = function()
 {
+    var outputext = document.getElementById("outputext");
+    outputext.innerHTML = "Script has run.";
     new V86({
         wasm_path: "v86.wasm",
         bios: { url: "seabios.bin" },
@@ -23,5 +25,6 @@ onload = function()
 
 <div id=screen_container>
     <div style="white-space: pre; font: 14px monospace"></div>
+    <p id="outputext">Script has not run.</p>
     <canvas style="display: none"></canvas>
 </div>
