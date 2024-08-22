@@ -10,8 +10,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background: #000;
+        }
+
+        h1 {
+            font-size: 5em;
             background: linear-gradient(90deg, #ff0000, #0000ff);
             background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             animation: gradient 10s ease infinite;
         }
 
@@ -27,8 +34,9 @@
             }
         }
     </style>
-    <title>Gradient Animation</title>
+    <title>Gradient Text Animation</title>
 </head>
 <body>
+    <h1>Cool Gradient Text</h1>
 </body>
 </html>
