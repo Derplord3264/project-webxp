@@ -179,6 +179,19 @@ body {
     color: #06adbc; 
 }
 
+/* Parallax Stars */
+.parallax {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: url('stars.png') repeat;
+    animation: moveStars 50s linear infinite;
+}
+
+@keyframes moveStars {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-50%, -50%); }
+}
 </style>
 <body>
     <header>
@@ -191,7 +204,7 @@ body {
         </div>
     </header>
     <main>
-
+        <div class="parallax"></div>
     </main>
     <div class="dot"></div>
     <div class="overlay">
@@ -256,6 +269,12 @@ body {
                 document.head.appendChild(link);
             } else if (event.data.type === 'tabSettingsReset') {
             }
+        });
+
+        window.addEventListener('scroll', function() {
+            const parallax = document.querySelector('.parallax');
+            let scrollPosition = window.pageYOffset;
+            parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
         });
     </script>
 </body>
