@@ -3,41 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project WebXP</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Project winXP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://us-east-1.tixte.net/uploads/i.kasd.nl/logo.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Project WebXP</h1>
-        <p>Run Windows XP in your browser and more!</p>
+        <div id="logo-container">
+            <a href="/"><img src="https://us-east-1.tixte.net/uploads/i.kasd.nl/logo.png" alt="UltraBrowse Network Logo" id="logo"></a>
+        </div>
+        <nav>
+            <ul>
+            </ul>
+        </nav>
     </header>
+
     <main>
         <section id="about">
-            <h2>About</h2>
-            <p>Project WebXP allows developers and nostalgic users to run Windows XP in their browser. Future plans include support for Windows Vista, Windows 8/8.1, Windows 10, and Ubuntu.</p>
+            <div class="content-wrapper">
+                <h2>About Us</h2>
+                <p>Project WebXP allows developers and nostalgic users to run Windows XP in their browser. Future plans include support for Windows Vista, Windows 8/8.1, Windows 10, and Ubuntu.</p>
+                <div class="buttons">
+                    <a href="./winxp.html" class="btn">Check it out!</a>
+                </div>
+            </div>
         </section>
-        <section id="features">
-            <h2>Features</h2>
-            <ul>
-                <li>Windows XP in the browser with a few games installed</li>
-                <li>Future support for Windows Vista</li>
-                <li>Future support for Windows 8/8.1</li>
-                <li>Future support for Windows 10</li>
-                <li>Future support for Ubuntu</li>
-            </ul>
-        </section>
-        <section id="requirements">
-            <h2>System Requirements</h2>
-            <p>To run games smoothly, you should have at least 8GB of RAM. Otherwise, any modern system should be able to run it.</p>
-        </section>
-        <section id="support">
-            <h2>Support</h2>
-            <p>If you encounter any issues, please submit an issue on our <a href="https://github.com/your-repo">GitHub repository</a>.</p>
+
+        <section id="services">
+            <div class="content-wrapper">
+                <h2>Our Services</h2>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-globe"></i></div>
+                    <h3>100% Browser Based</h3>
+                    <p> Windows XP in the browser with a few games installed</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Great Support</h3>
+                    <p> Future access to newer windows and linux images</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-fast-forward"></i></div>
+                    <h3>Fast Connections</h3>
+                    <p> Experience lightning-fast speeds.</p>
+                </div>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>© 2024 Project WebXP</p>
-    </footer>
-    <script src="script.js"></script>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
