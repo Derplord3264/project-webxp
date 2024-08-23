@@ -8,27 +8,47 @@
         }
     </style>
 </head>
-<script>
-onload = function()
-{
-    new V86({
-        wasm_path: "v86.wasm",
-        bios: { url: "seabios.bin" },
-        vga_bios: { url: "vgabios.bin" },
-        hda: {
-            url: "https://www.dropbox.com/scl/fi/0m32pa14v2gsxfe5xnmoq/winxp.img?rlkey=y8jazqfob2ax0v1arsdjfm895&st=eerb60e1&dl=0",
-            size: 2 * 1024 * 1024 * 1024,
-            async: true
-        },
-        memory_size: 2 * 1024 * 1024 * 1024,
-        vga_memory_size: 256 * 1024 * 1024,
-        screen_container: screen_container,
-        autostart: true,
-    });
-}
-</script>
+<body>
+    <input type="file" id="file_input" accept=".img">
+    <button id="start_button" disabled>Start Emulator</button>
+    <div id="screen_container">
+        <div style="white-space: pre; font: 14px monospace"></div>
+        <canvas style="display: none"></canvas>
+    </div>
+    <script>
+        var emulator;
 
-<div id=screen_container>
-    <div style="white-space: pre; font: 14px monospace"></div>
-    <canvas style="display: none"></canvas>
-</div>
+        document.getElementById('file_input').addEventListener('change', function(event) {
+            var file = event.target.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var buffer = e.target.result;
+                    emulator = new V86({
+                        wasm_path: "v86.wasm",
+                        bios: { url: "seabios.bin" },
+                        vga_bios: { url: "vgabios.bin" },
+                        hda: {
+                            buffer: buffer,
+                            size: file.size,
+                            async: true
+                        },
+                        memory_size: 2 * 1024 * 1024 * 1024,
+                        vga_memory_size: 256 * 1024 * 1024,
+                        screen_container: document.getElementById('screen_container'),
+                        autostart: false,
+                    });
+                    document.getElementById('start_button').disabled = false;
+                };
+                reader.readAsArrayBuffer(file);
+            }
+        });
+
+        document.getElementById('start_button').addEventListener('click', function() {
+            if (emulator) {
+                emulator.run();
+            }
+        });
+    </script>
+</body>
+</html>
