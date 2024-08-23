@@ -36,7 +36,8 @@ body {
 }
 
 .full-page-header {
-    position: relative;
+    background-image: url('/path/to/header-bg.jpg');
+    background-size: cover;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -44,21 +45,8 @@ body {
     align-items: center;
     text-align: center;
     color: #06adbc;
-    opacity: 0;
+    opacity: 0; 
     animation: fadeIn 2s forwards;
-}
-
-.full-page-header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('bliss.png'); /* Update the image path */
-    background-size: cover;
-    filter: blur(5px); /* Add blur effect */
-    z-index: -1; /* Ensure the background is behind the text */
 }
 
 .full-page-header h1 {
@@ -68,7 +56,7 @@ body {
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradient 1s ease infinite;
+    animation: gradient 4s ease infinite;
 }
 
 .full-page-header p {
@@ -217,7 +205,6 @@ body {
             </div>
         </div>
     </header>
-
     <main>
 
     </main>
