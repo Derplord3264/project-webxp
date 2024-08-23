@@ -2,6 +2,11 @@
 <script src="libv86.js"></script>
 <head>
     <title>WinXP</title>
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
 </head>
 <script>
 onload = function()
@@ -11,8 +16,8 @@ onload = function()
         bios: { url: "seabios.bin" },
         vga_bios: { url: "vgabios.bin" },
         hda: {
-            url: "winxp.img",
-            size: 2 * 1024 * 1024 * 1024,
+            url: "./winxp.img",
+            size: 4 * 1024 * 1024 * 1024,
             async: true
         },
         memory_size: 2 * 1024 * 1024 * 1024,
