@@ -200,7 +200,7 @@ body {
             <h1>Project WebXP</h1>
             <p>A better way to run operating systems in the browser.</p>
             <div class="button-container">
-                <button class="primary-btn" id="play-now-btn">Try it now</button>
+                <button class="primary-btn" id="play-now-btn" onclick="emuredirect()">Try it now</button>
                 <button class="secondary-btn" id="learn-more-btn">GitHub</button>
             </div>
         </div>
@@ -220,6 +220,11 @@ body {
     <script src="/js/main.js"></script>
     <script src="/js/subtitle.js"></script>
     <script>
+
+        function emuredirect() {
+            window.location.replace("./winxp.htm");
+        }
+        
         const dot = document.querySelector('.dot');
 
         document.addEventListener('mousemove', (e) => {
@@ -232,11 +237,6 @@ body {
         const overlay = document.querySelector('.overlay');
         const closeBtn = document.querySelector('.close-btn');
         const fullscreenBtn = document.querySelector('.fullscreen-btn');
-
-        playNowBtn.addEventListener('click', () => {
-            overlay.style.display = 'flex';
-            overlay.querySelector('iframe').src = 'https://shattereddisk.github.io/rickroll/rickroll.mp4';
-        });
 
         learnMoreBtn.addEventListener('click', () => {
             overlay.style.display = 'flex';
