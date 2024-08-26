@@ -16,11 +16,11 @@ onload = function()
         bios: { url: "seabios.bin" },
         vga_bios: { url: "vgabios.bin" },
         hda: {
-            url: "/imgs/winxp/",
-            fixed_chunk_size: 4096,
+            url: "/imgs/winxp/winxp.img-",  // Base URL for the chunks
+            fixed_chunk_size: 4 * 1024 * 1024,  // 4MB in bytes
             use_parts: true,
             async: true,
-            size: 2684215296,
+            size: 2 * 1024 * 1024 * 1024,  // Total size of the original IMG file (2GB)
         },
         memory_size: 2 * 1024 * 1024 * 1024,
         vga_memory_size: 256 * 1024 * 1024,
@@ -30,7 +30,7 @@ onload = function()
 }
 </script>
 
-<div id=screen_container>
+<div id="screen_container">
     <div style="white-space: pre; font: 14px monospace"></div>
     <canvas style="display: none"></canvas>
 </div>
