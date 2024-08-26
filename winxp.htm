@@ -16,9 +16,11 @@ onload = function()
         bios: { url: "seabios.bin" },
         vga_bios: { url: "vgabios.bin" },
         hda: {
-            url: "https://8000-derplord326-emptyworksp-oyu2jsj67mp.ws-us115.gitpod.io/winxp.img",
-            size: 2 * 1024 * 1024 * 1024,
-            async: true
+            url: "/imgs/winxp/",
+            fixed_chunk_size: 4096,
+            use_parts: true,
+            async: true,
+            size: 2684215296,
         },
         memory_size: 2 * 1024 * 1024 * 1024,
         vga_memory_size: 256 * 1024 * 1024,
